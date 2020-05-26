@@ -17,6 +17,7 @@ Below are the list of things I have stumbled upon(so far...) and found useful.
 
 ### Articles:
 * Go's **[Declaration Syntax](https://blog.golang.org/declaration-syntax)**
+- **[Strings, bytes, runes and characters](https://blog.golang.org/strings)** in Go
 - Go **[Slices](https://blog.golang.org/slices-intro)**
 - Go **[Maps](https://blog.golang.org/maps)** in action
 - **[Defer, Panic, and Recover](https://blog.golang.org/defer-panic-and-recover)**
