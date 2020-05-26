@@ -2,6 +2,8 @@
 
 Command to run .go file on windows terminal: go run {path-name}\\{file-name}.go
 
+Go Exercism: https://exercism.io/my/tracks/go
+
 Below are the list of things I have stumbled upon(so far...) and found useful.
 
 ### Resources:
