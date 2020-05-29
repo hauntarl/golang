@@ -7,10 +7,10 @@ import (
 
 // Doctor is exported
 type Doctor struct {
-	number     int      // if struct is exported but
+	number     int      // if struct is exported then
 	name       string   // fields starting with lower-case are not visible
 	episodes   []string // inorder to export fields, use Pascal case
-	Companions []string // only companion field is visible to other packages
+	Companions []string // only Companions field is visible to other packages
 }
 
 func main() {
@@ -53,7 +53,7 @@ func main() {
 
 	/*
 		Anonymous Structures:
-			- anonyStruct := struct{<structure-definition>}{<structure-initialiser>}
+			- anonymousStruct := struct{<structure-definition>}{<structure-initialiser>}
 			- very few use cases, can be used to format responses
 	*/
 	fmt.Println("\nANONYMOUS STRUCTURES:")
@@ -68,11 +68,11 @@ func main() {
 			  features of structure B
 			- structure A does not become a type of structure B instead it is an
 			  independent struct which has no relationship with struture B other
-			  than it embeds it
+			  than it embeds B
 
 		NOTE:
 			- should not be used for modelling behaviors/methods, it does allow
-			  behaviors/methods to carry through however we can't use them
+			  behaviors/methods to carry through, however we can't use them
 			  interchangeably is a severe limitation
 			- better use interfaces
 			- use embedding when you are describing common behavior, not talking about

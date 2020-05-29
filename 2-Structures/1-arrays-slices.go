@@ -64,9 +64,6 @@ func main() {
 				- copies elements from previous array
 				- then appends the new element
 				- this operation can be very expensive
-
-		Use Case:
-			- can be used as stack, queue
 	*/
 	fmt.Println("\nSLICES:")
 	d := []int{1, 2, 3, 4, 5}

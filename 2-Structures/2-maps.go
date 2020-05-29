@@ -31,10 +31,10 @@ func main() {
 			- if key absent it returns default value of <value-datatype>
 			- which may cause some problems, but retrieving returns 2 variables
 			- data, ok := myMap["key"]
-			- ok is a bool value which tells us whether key exists in map or not
+			- ok is a bool value which tells us whether the key exists in map or not
 			- it is a convention to use "ok" as variable name
 			- if you are just interested in whether key exists or not,
-			  use "_" write-only operator to throw away the value
+			  use "_" write-only operator to throw away the data
 
 		Operations:
 			- find length using len() function
@@ -58,6 +58,7 @@ func main() {
 	fmt.Println("Before, New York: ", data, "\n\tIsPresent: ", ok)
 	fmt.Println("\tmap length: ", len(statePopulation))
 	delete(statePopulation, "New York")
+	
 	data, ok = statePopulation["New York"]
 	fmt.Println("After, New York: ", data, "\n\tIsPresent: ", ok)
 	fmt.Println("\tmap length: ", len(statePopulation))
