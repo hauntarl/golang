@@ -69,7 +69,7 @@ func main() {
 	const typedConstant int = 10
 	var x int16 = 30
 	fmt.Printf("%v, %T\n", typedConstant, typedConstant)
-	//fmt.Printf("%v, %T", myConst + x, myConst + x) // compiler error
+	//fmt.Printf("%v, %T", typedConstant+x, typedConstant+x) // compiler error
 
 	const inferredConstant = 20
 	fmt.Printf("%v, %T\n", inferredConstant+x, inferredConstant+x) // returns variables datatype

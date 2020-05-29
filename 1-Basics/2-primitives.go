@@ -6,7 +6,7 @@ func main() {
 	/*
 		Boolean:
 			- not an alias for another datatype like integer
-			- cannot be converted back and forth with integers
+			- cannot be converted back and forth with other datatypes
 	*/
 	fmt.Println("\nBOOLEAN:")
 	var boolean bool // defaults to false

@@ -21,7 +21,8 @@ func main() {
 		VARIABLE DECLARATION:
 			1. var i int (defaults to 0)
 			2. var i int = 0
-			3. i := 0 (type inference)(not allowed when declaring global variables)
+			3. var i = 0
+			4. i := 0 (type inference)(not allowed when declaring global variables)
 
 		VISIBILTY:
 			1. no private scope
@@ -36,7 +37,8 @@ func main() {
 
 		TYPE CONVERSION:
 			1. destinationType(variable)
-			2. use strconv package for strings
+			2. use strconv package to convert numbers to string
+			3. alternatively, use fmt.Sprintf() to convert variables to string
 			NOTE: no implicit type conversion
 	*/
 
@@ -56,4 +58,7 @@ func main() {
 
 	l := strconv.Itoa(i) // import strconv package to convert number to string
 	fmt.Printf("%v, %T\n", l, l)
+
+	m := fmt.Sprintf("%v", true)
+	fmt.Printf("%v, %T\n", m, m)
 }
