@@ -11,7 +11,7 @@ func main() {
 		Creating Pointers:
 			1. var <var2> *<datatype> = &<var1>
 				- * declaring a pointer to data of that type
-				- & is addressof
+				- & is addressof operator
 			2. <var2> := &<var1>
 
 		Dereferencing Pointers:
@@ -20,13 +20,12 @@ func main() {
 
 		The new function:
 			- many cases you want a variable to point at a memory location
-			- instead of being assigned a value to it
 			- new(<datatype>) creates a new object in memory, initializes it with
 			  default value and returns the address of that memory
 
 		Types with internal pointers:
 			- all assignment operations in go are copy operations
-			- slices, maps (shallow copy, as they all have internal pointers)
+			- slices, maps (shallow copy, as they have internal pointers)
 			- primitives, arrays and structs (deep copy)
 	*/
 	var a int = 42
