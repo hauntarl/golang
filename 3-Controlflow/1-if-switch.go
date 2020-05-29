@@ -20,9 +20,10 @@ func main() {
 		"Florida":    20612439,
 		"New York":   19745289,
 	}
-	// if <initialization>; <condition> {<block>}
 	if data, ok := statePopulation["Texas"]; ok {
+		// if <initialization>; <condition> {<block>}
 		// scope of variable "data" is limited to this if block only
+		// and also in following if-else/else block
 		fmt.Println("Texas population: ", data)
 	}
 
@@ -31,7 +32,7 @@ func main() {
 			- <, >, <=, >=, ==, !=
 			- these work with all numeric types
 			- they don't work with string types
-			- for string type and reference types only == and != works
+			- for string and reference types, only == and != works
 
 		Logical operators:
 			- ||, && also known as short-circuit operators
@@ -81,7 +82,7 @@ func main() {
 				- that means break statement is implicit and if you don't want this
 			  	  behavior then use "fallthrough" keyword
 				- fallthrough is logic-less, irrespective of whether next case passes
-					or fails, go will execute the expressions inside the next case
+				  or fails, go will execute the expressions inside the next case
 			- there might be some cases where depending on the situation you might want
 			  to leave the case early, you can use the break statement for it
 	*/
@@ -113,6 +114,7 @@ func main() {
 	fmt.Println("tag list syntax")
 	i := 15
 	// allows overlapping of cases, executes the first case which satisfies the condition
+	// an alternative to if-else syntax
 	switch {
 	case i <= 10:
 		fmt.Println("\tless than or equal to 10")
@@ -124,7 +126,7 @@ func main() {
 	}
 
 	fmt.Println("\ntype switch")
-	var j interface{} = 10 // variable j is of type interface, which can take any datatype in go
+	var j interface{} = 10 // variable j is an empty interface, which can take any datatype in go
 	switch j.(type) {      // <var>.(type) can only be used in type switch, returns type of data
 	case int:
 		fmt.Println("\tint")

@@ -10,6 +10,7 @@ func main() {
 			3. for {}
 			4. for <key>, <value> := range <collection> {}
 				- arrays, slices, maps, strings and channels
+				- in case of channels, we only get one parameter: <value>
 
 		Exiting early?
 			1. break
@@ -39,7 +40,7 @@ func main() {
 	fmt.Println("\ninfinite loop in go")
 	for {
 		if i == 10 {
-			break // also their is "continue" keyword like other languages
+			break // also go has "continue" keyword like other languages
 		}
 		fmt.Print(i, " ")
 		i++
@@ -47,8 +48,8 @@ func main() {
 
 	fmt.Println("\nlabelled loop in go")
 	// why? when we are using nested for loops, the "break" keyword, exits the closest
-	// loop it can find, in order to break out of outerloops we use labelled loops
-Loop: // if label declared, must be utilized
+	// loop it can find. In order to break out of outerloops we use labelled loops
+Loop: // if label declared, must be utilized or compiler throws an error
 	for i := 1; i <= 3; i++ {
 		for j := 1; j <= 3; j++ {
 			fmt.Print(i*j, " ")
