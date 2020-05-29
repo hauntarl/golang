@@ -17,6 +17,7 @@ func main() {
 			- funtion will stop executing, but deferred function will still fire
 			- if nothing handles that panic then program will exit
 	*/
+	
 	// a, b := 1, 0
 	// ans := a / b
 	// fmt.Println(ans)

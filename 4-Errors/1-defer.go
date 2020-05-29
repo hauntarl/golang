@@ -28,6 +28,7 @@ func main() {
 			- or you can delegate the processing of resources to another function and
 			  make that function close the resource
 	*/
+	
 	funcState := "\n\tEnd of function"  // defer saves the argument values
 	defer fmt.Println(funcState)        // from where it was triggered,
 	funcState = "\n\tStart of function" // changes made to variables after defer statement
