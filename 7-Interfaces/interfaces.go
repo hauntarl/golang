@@ -88,6 +88,7 @@ func main() {
 	} else {
 		fmt.Println("Conversion to BufferedWriterReader Failed")
 	}
+
 	r, ok := myWriterReader.(io.Reader)
 	if ok {
 		fmt.Println(r)
@@ -124,9 +125,9 @@ func main() {
 			  don't create interface assuming you know how people are going to use it, allow
 			  them to create interfaces that your type will implement, that way they don't have
 			  to implement a whole bunch of methods that they'll never even use
-			- go has totally inverted approach towards interfaces comapred to other languages
+			- go has totally inverted approach towards interfaces compared to other languages
 			- do export interfaces for the types that you'll be consuming, so when you're defining
-			  a type that you'll be consuming export interfaces for others to implement then you
+			  a type that you'll be consuming, export interfaces for others to implement then you
 			  only have to worry about the behavior they are exposing to you
 			- if possible define your methods and functions to receive interfaces
 	*/
