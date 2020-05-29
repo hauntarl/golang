@@ -50,8 +50,7 @@ func (g greet) greeter() {
 func main() {
 	/*
 		Basic Syntax:
-			- the main() function itself
-			- func <name>() {<body...>} - basic syntax
+			- func <name>() {<body...>}
 			- <name> - Pascal or camelCase, depending on whether you want to export or not
 	*/
 	fmt.Println("\nBasic syntax:")
@@ -103,7 +102,7 @@ func main() {
 	/*
 		Anonymous functions:
 			- func() {}()
-			- known as IIFE in Js
+			- known as IIFE in Js - Immediately Invoked Function Expression
 			- lets you define function as a variable then you can pass around the function
 			- functions are treated as first class citizens
 	*/
@@ -113,7 +112,7 @@ func main() {
 	}()
 
 	var f func() = func() {
-		fmt.Println("I am also a first class citizen")
+		fmt.Println("I am a first class citizen")
 	}
 	f()
 
@@ -134,6 +133,7 @@ func main() {
 	/*
 		Methods:
 			- a function which is executed in a given context is called a method
+			- methods define the behavior of a structure
 			- func (<var> <type>) <func-name>() {}
 			- (<var> <type>) - value receiver can accept both a copy or a reference
 	*/
