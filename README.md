@@ -27,3 +27,5 @@ Below are the list of things I have stumbled upon(so far...) and found useful.
 
 ### Go Talks:
 * GothamGo 2018 - **[Things in Go I Never Use](https://www.youtube.com/watch?v=5DVV36uqQ4E)** by Mat Ryer
+* GopherCon 2016 - **[Inside the Map Implementation](https://www.youtube.com/watch?v=Tl7mi9QmLns)** by Keith Randall
+* GopherCon 2016 - **[Understanding nil](https://www.youtube.com/watch?v=ynoY2xz-F8s)** by Francesc Campoy
