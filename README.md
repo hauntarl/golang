@@ -29,3 +29,8 @@ Below are the list of things I have stumbled upon(so far...) and found useful.
 * GothamGo 2018 - **[Things in Go I Never Use](https://www.youtube.com/watch?v=5DVV36uqQ4E)** by Mat Ryer
 * GopherCon 2016 - **[Inside the Map Implementation](https://www.youtube.com/watch?v=Tl7mi9QmLns)** by Keith Randall
 * GopherCon 2016 - **[Understanding nil](https://www.youtube.com/watch?v=ynoY2xz-F8s)** by Francesc Campoy
+* GopherCon 2017 - **[Understanding Channels](https://www.youtube.com/watch?v=KBZlN0izeiY)** by Kavya Joshi
+- Google I/O 2012 - **[Go Concurrency Patterns](https://www.youtube.com/watch?v=f6kdp27TYZs)**
+- Google I/O 2013 - **[Advanced Go Concurrency Patterns](https://www.youtube.com/watch?v=QDDwwePbDtw)**
+* **[Concurrency Is Not Parallelism](https://www.youtube.com/watch?v=cN_DpYBzKso)** by Rob Pike
+* dotGo 2015 - **[Simplicity is Complicated](https://www.youtube.com/watch?v=rFejpH_tAHM)** by Rob Pike 
