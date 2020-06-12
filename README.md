@@ -23,6 +23,7 @@ Below are the list of things I have stumbled upon(so far...) and found useful.
 - **[Arrays, slices (and strings):](https://blog.golang.org/slices)** The mechanics of 'append'
 - Go **[Maps](https://blog.golang.org/maps)** in action
 - **[Defer, Panic, and Recover](https://blog.golang.org/defer-panic-and-recover)**
+- **[When nil Isn't Equal to nil](https://www.calhoun.io/when-nil-isnt-equal-to-nil/)** Jon Calhoun
 * Inside the Go **[Playground](https://blog.golang.org/playground)**
 
 
