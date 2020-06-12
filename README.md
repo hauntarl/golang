@@ -24,6 +24,7 @@ Below are the list of things I have stumbled upon(so far...) and found useful.
 - Go **[Maps](https://blog.golang.org/maps)** in action
 - **[Defer, Panic, and Recover](https://blog.golang.org/defer-panic-and-recover)**
 - **[When nil Isn't Equal to nil](https://www.calhoun.io/when-nil-isnt-equal-to-nil/)** Jon Calhoun
+- **[50 Shades of Go:](http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/)** Traps, Gotchas, and Common Mistakes
 * Inside the Go **[Playground](https://blog.golang.org/playground)**
 
 
