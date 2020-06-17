@@ -11,6 +11,7 @@ Below are the list of things I have stumbled upon(so far...) and found useful.
 - **[Download](https://golang.org/)** Golang
 - Setup **[VSCode](https://code.visualstudio.com/docs/languages/go)**
 - Go **[Playground](https://play.golang.org/)**
+* **[How to Write Go Code](https://golang.org/doc/code.html)**
 * A **[Tour](https://tour.golang.org/welcome/1)** of Go
 * Go **[Docs](https://golang.org/doc/)**
 * Go **[Packages](https://pkg.go.dev/)**
@@ -23,9 +24,9 @@ Below are the list of things I have stumbled upon(so far...) and found useful.
 - **[Arrays, slices (and strings):](https://blog.golang.org/slices)** The mechanics of 'append'
 - Go **[Maps](https://blog.golang.org/maps)** in action
 - **[Defer, Panic, and Recover](https://blog.golang.org/defer-panic-and-recover)**
-- **[When nil Isn't Equal to nil](https://www.calhoun.io/when-nil-isnt-equal-to-nil/)** Jon Calhoun
-- **[50 Shades of Go:](http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/)** Traps, Gotchas, and Common Mistakes
-* Inside the Go **[Playground](https://blog.golang.org/playground)**
+* **[When nil Isn't Equal to nil](https://www.calhoun.io/when-nil-isnt-equal-to-nil/)** Jon Calhoun
+* **[50 Shades of Go:](http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/)** Traps, Gotchas, and Common Mistakes
+- Inside the Go **[Playground](https://blog.golang.org/playground)**
 
 
 ### Go Talks:
