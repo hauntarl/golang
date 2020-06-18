@@ -11,8 +11,8 @@ Below are the list of things I have stumbled upon(so far...) and found useful.
 - **[Download](https://golang.org/)** Golang
 - Setup **[VSCode](https://code.visualstudio.com/docs/languages/go)**
 - Go **[Playground](https://play.golang.org/)**
-* **[How to Write Go Code](https://golang.org/doc/code.html)**
 * A **[Tour](https://tour.golang.org/welcome/1)** of Go
+* **[How to Write](https://golang.org/doc/code.html)** Go Code
 * Go **[Docs](https://golang.org/doc/)**
 * Go **[Packages](https://pkg.go.dev/)**
 
