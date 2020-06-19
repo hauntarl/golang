@@ -35,7 +35,7 @@ func main() {
 	}()
 	wg.Wait()
 
-	fmt.Println("\nSpawning 10 go routines")
+	fmt.Println("\nSpawning 5 go routines")
 	for i := 0; i < 5; i++ {
 		wg.Add(2)
 		go func() {
@@ -72,7 +72,8 @@ func main() {
 	go func(ch <-chan int) { // receive only channel
 		fmt.Println(<-ch)
 		wg.Done()
-	}(ch) // runtime casts the bi-directional channel into uni-directional channel
+	}(ch) 
+	// runtime casts the bi-directional channel into uni-directional channel
 	// something specific to channels only
 	go func(ch chan<- int) { // send only channel
 		ch <- 10
@@ -166,6 +167,8 @@ func main() {
 	time.Sleep(time.Second)
 
 	doneCh <- struct{}{}
+	time.Sleep(1 * time.Second)
+	// you can try sending data on closed channel, go-runtime will panic
 }
 
 const (
@@ -197,12 +200,13 @@ var logChWithSelect = make(chan logEntry, 50)
 var doneCh = make(chan struct{}) // acts as a signal only channel, empty struct = 0 mem allocation
 
 func selectLogger() {
+	defer close(logChWithSelect)
+	defer fmt.Println("Closing logChWithSelect")
+	defer close(doneCh)
+	defer fmt.Println("Closing doneCh")
 	for {
 		select {
 		case entry, ok := <-logChWithSelect:
-			if !ok {
-				break
-			}
 			fmt.Printf(
 				"%v\t%v - [%v]%v\n",
 				ok,
@@ -211,12 +215,8 @@ func selectLogger() {
 				entry.message,
 			)
 		case _, ok := <-doneCh:
-			if !ok {
-				break
-			}
-			fmt.Println("\nSignal to wrap things up", ok)
-			close(logChWithSelect)
-			close(doneCh)
+			fmt.Println("Signal to wrap things up:", ok)
+			return
 		}
 		// entire select statement is blocked until a message is received on one of the case
 	}
