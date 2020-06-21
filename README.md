@@ -20,6 +20,7 @@ Below are the list of things I have stumbled upon(so far...) and found useful.
 
 ### Articles:
 * Go's **[Declaration Syntax](https://blog.golang.org/declaration-syntax)**
+* Using Go **[Modules](https://blog.golang.org/using-go-modules)**
 - **[Strings, bytes, runes and characters](https://blog.golang.org/strings)** in Go
 - Go **[Slices](https://blog.golang.org/slices-intro)**
 - **[Arrays, slices (and strings):](https://blog.golang.org/slices)** The mechanics of 'append'
