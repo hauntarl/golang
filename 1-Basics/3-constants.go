@@ -68,11 +68,11 @@ func main() {
 	fmt.Println("\nCONSTANTS")
 	const typedConstant int = 10
 	var x int16 = 30
-	fmt.Printf("%v, %T\n", typedConstant, typedConstant)
+	cout(typedConstant)
 	//fmt.Printf("%v, %T", typedConstant+x, typedConstant+x) // compiler error
 
 	const inferredConstant = 20
-	fmt.Printf("%v, %T\n", inferredConstant+x, inferredConstant+x) // returns variables datatype
+	cout(inferredConstant + x) // returns variables datatype
 
 	/*
 		Enumerated Constants:
@@ -129,4 +129,8 @@ func main() {
 	fmt.Printf("Is the user an admin? %v\n", userByte&isAdmin == isAdmin)
 	var accessByteForAfricaAndAsia byte = canSeeAfrica | canSeeAsia
 	fmt.Printf("Can user see Africa and Asia? %v\n", userByte&accessByteForAfricaAndAsia == accessByteForAfricaAndAsia)
+}
+
+func cout(val interface{}) {
+	fmt.Printf("%v, %T\n", val, val)
 }

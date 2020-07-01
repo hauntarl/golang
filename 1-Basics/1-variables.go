@@ -43,7 +43,7 @@ func main() {
 	*/
 
 	i := 420 // local variable, scope: block
-	fmt.Printf("%v, %T\n", i, i)
+	cout(i)
 
 	var j float32 // if declared, local variable must be used.
 
@@ -51,14 +51,18 @@ func main() {
 	fmt.Printf("author: %v, age: %v, dob: %v, exported K: %v\n", author, age, theDOB, K)
 
 	j = float32(i) // requires explicit conversion to make sure no data is lost
-	fmt.Printf("%v, %T\n", j, j)
+	cout(j)
 
 	k := string(i) // will convert number to its respective unicode character
-	fmt.Printf("%v, %T\n", k, k)
+	cout(k)
 
 	l := strconv.Itoa(i) // import strconv package to convert number to string
-	fmt.Printf("%v, %T\n", l, l)
+	cout(l)
 
 	m := fmt.Sprintf("%v", true)
-	fmt.Printf("%v, %T\n", m, m)
+	cout(m)
+}
+
+func cout(val interface{}) {
+	fmt.Printf("%v, %T\n", val, val)
 }

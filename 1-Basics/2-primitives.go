@@ -10,7 +10,7 @@ func main() {
 	*/
 	fmt.Println("\nBOOLEAN:")
 	var boolean bool // defaults to false
-	fmt.Printf("%v, %T\n", boolean, boolean)
+	cout(boolean)
 
 	/*
 		Signed Integer:
@@ -32,7 +32,7 @@ func main() {
 		NOTE:
 			- cannot mix types even in same family (datatype must be same)
 			- need to perform explicit type conversion (risk of data loss)
-		
+
 		Valid literals:
 			42
 			4_2
@@ -56,11 +56,11 @@ func main() {
 	*/
 	fmt.Println("\nINTEGERS:")
 	var signedInteger int8
-	fmt.Printf("%v, %T\n", signedInteger, signedInteger)
+	cout(signedInteger)
 	var unsignedInteger uint16
-	fmt.Printf("%v, %T\n", unsignedInteger, unsignedInteger)
+	cout(unsignedInteger)
 	var byteVar byte
-	fmt.Printf("Byte %v, %T\n", byteVar, byteVar)
+	cout(byteVar)
 
 	fmt.Println("\nBIWISE OPERATIONS:")
 	a := 10 // defaults to int
@@ -118,9 +118,9 @@ func main() {
 	c := 3.14                // defaults to float64
 	var d float32 = 13.7E-72 // explicity defining a float 32
 	e := 13.7e72
-	fmt.Printf("%v, %T\n", c, c)
-	fmt.Printf("%v, %T\n", d, d)
-	fmt.Printf("%v, %T\n", e, e)
+	cout(c)
+	cout(d)
+	cout(e)
 
 	/*
 		Complex:
@@ -134,11 +134,11 @@ func main() {
 	*/
 	fmt.Println("\nCOMPLEX:")
 	var f complex64 // defaults to 0 + 0i
-	fmt.Printf("%v, %T\n", f, f)
+	cout(f)
 	g := complex(4, 5) // defaults to complex128
-	fmt.Printf("%v, %T\n", g, g)
-	fmt.Printf("%v, %T\n", real(g), real(g))
-	fmt.Printf("%v, %T\n", imag(g), imag(g))
+	cout(g)
+	cout(real(g))
+	cout(imag(g))
 
 	/*
 		Texts:
@@ -166,11 +166,12 @@ func main() {
 			Invalid literals:
 				"\uD800"             // illegal: surrogate half
 				"\U00110000"         // illegal: invalid Unicode code point
+			Refer: https://unicodebook.readthedocs.io/unicode_encodings.html
 
 		There are four ways to represent the integer value as a numeric constant:
-			- \x followed by exactly two hexadecimal digits (limit < 0x10FFFF)
-			- \u followed by exactly four hexadecimal digits 
-			- \U followed by exactly eight hexadecimal digits
+			- \x followed by exactly two hexadecimal digits
+			- \u followed by exactly four hexadecimal digits
+			- \U followed by exactly eight hexadecimal digits (limit < \U0010FFFF)
 			- \ followed by exactly three octal digits. (0-255)
 		Although these representations all result in an integer, they have different valid ranges.
 		Further they also allow special escape characters
@@ -179,7 +180,7 @@ func main() {
 				- rn := '<single rune char>'
 				- type alias for int32
 				- special methods required to process
-			
+
 			Valid literals:
 				'a'
 				'ä'
@@ -193,7 +194,7 @@ func main() {
 				'\u12e4'
 				'\U00101234'
 				'\''         // rune literal containing single quote character
-			
+
 			Invalid literals:
 				'aa'         // illegal: too many characters
 				'\xa'        // illegal: too few hexadecimal digits
@@ -205,11 +206,15 @@ func main() {
 	*/
 	fmt.Println("\nTEXTS:")
 	h := "hello world"
-	fmt.Printf("%v, %T\n", h, h)
+	cout(h)
 	fmt.Printf("%v, %T\tbyte at index: 6\n", h[6], h[6]) // cannot modify the value
-	fmt.Printf("%v, %T\tbyte coverted to string\n", string(h[6]), string(h[6]))
+	fmt.Printf("%v, %T\tbyte converted to string\n", string(h[6]), string(h[6]))
 	i := []byte(h) // byte slicing
 	fmt.Printf("byte array: %v, %T\n", i, i)
 	j := 'a' // rune datatype
 	fmt.Printf("Rune '%v' - %v, %T\n", string(j), j, j)
+}
+
+func cout(val interface{}) {
+	fmt.Printf("%v, %T\n", val, val)
 }
