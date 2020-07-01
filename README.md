@@ -20,6 +20,7 @@ Below are the list of things I have stumbled upon(so far...) and found useful.
 
 ### Articles:
 * Go's **[Declaration Syntax](https://blog.golang.org/declaration-syntax)**
+* Using Go **[Modules](https://blog.golang.org/using-go-modules)**
 - **[Strings, bytes, runes and characters](https://blog.golang.org/strings)** in Go
 - **[Unicode Encodings](https://unicodebook.readthedocs.io/unicode_encodings.html)**
 - Go **[Slices](https://blog.golang.org/slices-intro)**
@@ -28,6 +29,7 @@ Below are the list of things I have stumbled upon(so far...) and found useful.
 - **[Defer, Panic, and Recover](https://blog.golang.org/defer-panic-and-recover)**
 * **[When nil Isn't Equal to nil](https://www.calhoun.io/when-nil-isnt-equal-to-nil/)** Jon Calhoun
 * **[50 Shades of Go:](http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/)** Traps, Gotchas, and Common Mistakes
+* **[Functional options for friendly APIs](https://dave.cheney.net/2014/10/17/functional-options-for-friendly-apis)** Dave Cheney
 - Inside the Go **[Playground](https://blog.golang.org/playground)**
 
 
