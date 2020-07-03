@@ -6,60 +6,12 @@ import (
 	"io"
 )
 
-// Writer is exported
-type Writer interface {
-	Write([]byte) (int, error)
-}
-
-// ConsoleWriter is exported
-type ConsoleWriter struct{}
-
-// Write is exported
-func (cw ConsoleWriter) Write(data []byte) (int, error) {
-	n, err := fmt.Print(string(data))
-	if err != nil {
-		return 0, err
-	}
-	fmt.Println("\tBytes written to console: ", n)
-	return n, err
-}
-
-type incrementer interface {
-	increment() int
-}
-
-type intCounter int
-
-func (ic *intCounter) increment() int {
-	*ic++
-	return int(*ic)
-}
-
 func main() {
-	/*
-		Interfaces:
-			- structs are used as data containers, but interfaces define behavior
-			- in go, we do not explicity tell go that we are implementing an interface,
-			  we use interfaces implicity
-			- interfaces in go are used to achieve polymorphism like behavior
-			- you can compose interfaces together similar to structs
-	*/
-	var myConsoleWriter Writer = ConsoleWriter{}
-	myConsoleWriter.Write([]byte("Hello World"))
-
-	fmt.Println(*new(intCounter))
-	var myIncrementer incrementer = new(intCounter)
-	for i := 0; i < 5; i++ {
-		fmt.Print(myIncrementer.increment(), " ")
-	}
-	fmt.Println()
-
 	// this is a comprehensive example for composition of interfaces
 	fmt.Println("\nCreating a byte buffer for some string:")
-	var myWriterReader WriterReader = NewBufferedWriterReader()
-	totalBytes, err := myWriterReader.Write(
-		[]byte("This repository consists of code snippets for golang basics"),
-	)
+	var wr WriteReadCloser = NewBufferedWriterReader()
+	totalBytes, err := wr.Write(
+		[]byte("This repository consists of code snippets for golang basics"))
 	if err != nil {
 		fmt.Println(err.Error())
 		return
@@ -67,14 +19,14 @@ func main() {
 	fmt.Println("Total bytes buffered -", totalBytes)
 
 	fmt.Println("\nRecursively Reading exactly 16 bytes from the buffer:")
-	err = myWriterReader.Read()
+	err = wr.Read()
 	if err != nil {
 		fmt.Println(err.Error())
 		return
 	}
 
 	fmt.Println("\nFlushing out all remaining bytes from the buffer:")
-	err = myWriterReader.Close()
+	err = wr.Close()
 	if err != nil {
 		fmt.Println(err.Error())
 		return
@@ -82,14 +34,14 @@ func main() {
 
 	//type conversion using interfaces
 	fmt.Println("\nType conversion:")
-	bwr, ok := myWriterReader.(*BufferedWriterReader)
+	bwr, ok := wr.(*BufferedWriterReader)
 	if ok {
 		fmt.Println(bwr)
 	} else {
 		fmt.Println("Conversion to BufferedWriterReader Failed")
 	}
 
-	r, ok := myWriterReader.(io.Reader)
+	r, ok := wr.(io.Reader)
 	if ok {
 		fmt.Println(r)
 	} else {
@@ -99,15 +51,14 @@ func main() {
 	//empty interface
 	fmt.Println("\nEmpty Interfaces for type casting:")
 	var myEmptyInterface interface{} = NewBufferedWriterReader()
-	if wr, ok := myEmptyInterface.(WriterReader); ok {
+	if wr, ok := myEmptyInterface.(WriteReadCloser); ok {
 		wr.Write(
 			[]byte("This repository consists of code snippets for golang basics"),
 		)
 		wr.Close()
 	}
 	fmt.Println()
-	r, ok = myEmptyInterface.(io.Reader)
-	if ok {
+	if r, ok = myEmptyInterface.(io.Reader); ok {
 		fmt.Println(r)
 	} else {
 		fmt.Println("Coversion to io.Reader Failed", r)
@@ -133,36 +84,56 @@ func main() {
 	*/
 }
 
-// NewBufferedWriterReader is exported
+// Writer defines the structure of methods it exports
+type Writer interface {
+	Write([]byte) (int, error)
+}
+
+// Reader provides the definition of Read method
+type Reader interface {
+	Read() error
+}
+
+// Closer provides the definiton of Close method
+type Closer interface {
+	Close() error
+}
+
+// WriteReadCloser is a composite interface comprised of Writer, Reader and Closer
+type WriteReadCloser interface {
+	Writer
+	Reader
+	Closer
+}
+
+// ConsoleWriter is exported
+type ConsoleWriter struct{}
+
+// Write is exported
+func (cw ConsoleWriter) Write(data []byte) (int, error) {
+	n, err := fmt.Print(string(data))
+	if err != nil {
+		return 0, err
+	}
+	fmt.Println("\tBytes written to console: ", n)
+	return n, err
+}
+
+// BufferedWriterReader is a user defined struct which holds
+// pointer to bytes.Buffer object
+type BufferedWriterReader struct {
+	buffer *bytes.Buffer
+}
+
+// NewBufferedWriterReader is like a constructor of BufferedWriterReader
+// to explicitly initialize the BufferedWriterReader object
 func NewBufferedWriterReader() *BufferedWriterReader {
 	return &BufferedWriterReader{
 		buffer: bytes.NewBuffer([]byte{}),
 	}
 }
 
-// Reader is exported
-type Reader interface {
-	Read() error
-}
-
-// Closer is exported
-type Closer interface {
-	Close() error
-}
-
-// WriterReader is exported
-type WriterReader interface {
-	Writer
-	Reader
-	Closer
-}
-
-// BufferedWriterReader is exported
-type BufferedWriterReader struct {
-	buffer *bytes.Buffer
-}
-
-// Write is exported
+// Write method of BufferedWriterReader stores data into the buffer
 func (bwc *BufferedWriterReader) Write(data []byte) (int, error) {
 	n, err := bwc.buffer.Write(data)
 	if err != nil {
@@ -171,7 +142,8 @@ func (bwc *BufferedWriterReader) Write(data []byte) (int, error) {
 	return n, nil
 }
 
-// Read is exported
+// Read method reads data 16 bytes at a time, if there are <16 bytes
+// present in the buffer or it reaches the EOF, it stops reading
 func (bwc *BufferedWriterReader) Read() error {
 	byteData := make([]byte, 16)
 	for bwc.buffer.Len() > 16 {
@@ -180,8 +152,8 @@ func (bwc *BufferedWriterReader) Read() error {
 			return err
 		}
 
-		var myWriter Writer = new(ConsoleWriter)
-		_, err = myWriter.Write(byteData)
+		var cw Writer = new(ConsoleWriter)
+		_, err = cw.Write(byteData)
 		if err != nil {
 			return err
 		}
@@ -189,7 +161,8 @@ func (bwc *BufferedWriterReader) Read() error {
 	return nil
 }
 
-// Close is exported
+// Close method flushes the remaining bytes from the buffer, applicable
+// if the reamining bytes are less than 16 in this case
 func (bwc *BufferedWriterReader) Close() error {
 	for bwc.buffer.Len() > 0 {
 		byteData := bwc.buffer.Next(16)
