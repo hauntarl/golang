@@ -23,6 +23,18 @@ func main() {
 			- just like arrays we can use "&" operator to make variable point
 			  to same location in memory (shallow copy)
 
+			// An empty struct.
+			struct {}
+
+			// A struct with 6 fields.
+			struct {
+				x, y int
+				u float32
+				_ float32  // padding
+				A *[]int
+				F func()
+			}
+
 		Using Structure:
 			1. named arguments
 				- explicitly specifying data for each field with field-name
@@ -69,6 +81,26 @@ func main() {
 			- structure A does not become a type of structure B instead it is an
 			  independent struct which has no relationship with struture B other
 			  than it embeds B
+			- A field declared with a type but no explicit field name is called 
+			  an embedded field.
+			- An embedded field must be specified as a type name T or as a pointer
+			- to a non-interface type name *T, and T itself may not be a pointer type.
+			- The unqualified type name acts as the field name.
+			
+			struct {
+				T1        // field name is T1
+				*T2       // field name is T2
+				P.T3      // field name is T3
+				*P.T4     // field name is T4
+				x, y int  // field names are x and y
+			}
+
+		INVALID:
+			struct {
+				T     // conflicts with embedded field *T and *P.T
+				*T    // conflicts with embedded field T and *P.T
+				*P.T  // conflicts with embedded field T and *T
+			}
 
 		NOTE:
 			- should not be used for modelling behaviors/methods, it does allow

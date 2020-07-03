@@ -10,6 +10,11 @@ func main() {
 			- [...]int{1, 2, 3, 4, 5}: create an array large enough to hold given data
 			- default value is zero for each element
 			- use built-in function len(array) to find the length
+			eg. [32]byte
+				[2*N] struct { x, y int32 }
+				[1000]*float64
+				[3][5]int
+				[2][2][2]float64  // same as [2]([2]([2]float64))
 
 		Array Copy:
 			- array2 := array1 (deep copy)
@@ -45,6 +50,7 @@ func main() {
 			- []<datatype>{<values>}
 			- built-in function len(slice) to find the length
 			- built-in function cap(slice) actual length of underlying array
+			- value of an uninitialized slice is nil
 
 		Slice Copy:
 			- slice2 := slice1 (shallow copy)
@@ -56,8 +62,10 @@ func main() {
 
 		Built-in functions:
 			1. slice := make([]<datatype>, <length>, <capacity>)
-				- Unlike array slice don't have fixed size
+				- Unlike array slice doesn't have fixed size
 				- slices have the capability to add and remove elements from them
+				- make([]int, 50, 100) is equivalent to
+				- new([100]int)[0:50] statement
 			2. slice = append(<source>, <elements...>) - vargs
 				- if underlying array does not have the capacity to store the new element
 				- it creates a new array of larger size
@@ -114,5 +122,21 @@ func main() {
 	slice = slice[:len(slice)-1] // removing last element
 	fmt.Printf("Remove last: %v\n", slice)
 	slice = append(slice[:len(slice)/2], slice[len(slice)/2+1:]...) // removing an element from middle
-	fmt.Printf("Remove middle: %v\n", slice)
+	fmt.Printf("Remove middle: %v\n\n", slice)
+
+	// how the underlying length and capacity changes
+	slice = make([]int, 5, 10)
+	cout(slice)
+	slice1 := slice // reamins same
+	cout(slice1)
+	slice2 := slice[:] // remains same
+	cout(slice2)
+	slice4 := slice[:3] // underlying length changes
+	cout(slice4)
+	slice3 := slice[3:5] // along with the length, underlying capacity changes
+	cout(slice3)
+}
+
+func cout(slice []int) {
+	fmt.Printf("slice: %v,\nlen: %v, cap: %v\n\n", slice, len(slice), cap(slice))
 }
