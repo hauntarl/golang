@@ -135,6 +135,17 @@ func main() {
 	cout(slice4)
 	slice3 := slice[3:5] // along with the length, underlying capacity changes
 	cout(slice3)
+
+	arr := [...]int{1, 2, 3, 4, 5}
+	s := arr[:3]
+	cout(s)
+	// for slices, the upper index bound is the slice capacity cap(a) rather than the length
+	s1 := s[:cap(s)]
+	cout(s1)
+	
+	// full slice expression a[low:high:max]
+	s2 := arr[:2:3]
+	cout(s2)
 }
 
 func cout(slice []int) {
