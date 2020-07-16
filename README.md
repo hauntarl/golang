@@ -42,4 +42,5 @@ Below are the list of things I have stumbled upon(so far...) and found useful.
 - Google I/O 2012 - **[Go Concurrency Patterns](https://www.youtube.com/watch?v=f6kdp27TYZs)**
 - Google I/O 2013 - **[Advanced Go Concurrency Patterns](https://www.youtube.com/watch?v=QDDwwePbDtw)**
 * **[Concurrency Is Not Parallelism](https://www.youtube.com/watch?v=cN_DpYBzKso)** by Rob Pike
-* dotGo 2015 - **[Simplicity is Complicated](https://www.youtube.com/watch?v=rFejpH_tAHM)** by Rob Pike 
+* **[Simplicity is Complicated](https://www.youtube.com/watch?v=rFejpH_tAHM)** by Rob Pike
+* **["So You Wanna Go Fast?"](https://www.youtube.com/watch?v=DJ4d_PZ6Gns&list=WL&index=2&t=353s)** by Tyler Treat
