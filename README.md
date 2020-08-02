@@ -14,8 +14,9 @@ Below are the list of things I have stumbled upon(so far...) and found useful.
 * A **[Tour](https://tour.golang.org/welcome/1)** of Go
 * **[How to Write](https://golang.org/doc/code.html)** Go Code
 * Go **[Language specification](https://golang.org/ref/spec)**
-* Go **[Docs](https://golang.org/doc/)**
-* Go **[Packages](https://pkg.go.dev/)**
+* **[Effective Go](https://golang.org/doc/effective_go.html)**
+- Go **[Docs](https://golang.org/doc/)**
+- Go **[Packages](https://pkg.go.dev/)**
 
 
 ### Articles:
