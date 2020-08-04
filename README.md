@@ -40,6 +40,7 @@ Below are the list of things I have stumbled upon(so far...) and found useful.
 * GopherCon 2016 - **[Understanding nil](https://www.youtube.com/watch?v=ynoY2xz-F8s)** by Francesc Campoy
 * GopherCon 2017 - **[Understanding Channels](https://www.youtube.com/watch?v=KBZlN0izeiY)** by Kavya Joshi
 * GopherCon 2018 - **[The Scheduler Saga](https://www.youtube.com/watch?v=YHRO5WQGh0k)** by Kavya Joshi
+* GopherCon 2018 - **[Simplicity and Go](https://www.youtube.com/watch?v=S6mEo_FHZ5Y&list=WL&index=3)** by Katherine Cox Buday
 - Google I/O 2012 - **[Go Concurrency Patterns](https://www.youtube.com/watch?v=f6kdp27TYZs)**
 - Google I/O 2013 - **[Advanced Go Concurrency Patterns](https://www.youtube.com/watch?v=QDDwwePbDtw)**
 * **[Concurrency Is Not Parallelism](https://www.youtube.com/watch?v=cN_DpYBzKso)** by Rob Pike
