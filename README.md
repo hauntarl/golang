@@ -15,6 +15,7 @@ Below are the list of things I have stumbled upon(so far...) and found useful.
 * **[How to Write](https://golang.org/doc/code.html)** Go Code
 * Go **[Language specification](https://golang.org/ref/spec)**
 * **[Effective Go](https://golang.org/doc/effective_go.html)**
+* The Go **[Memory Model](https://golang.org/ref/mem)**
 - Go **[Docs](https://golang.org/doc/)**
 - Go **[Packages](https://pkg.go.dev/)**
 
