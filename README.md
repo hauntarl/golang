@@ -5,7 +5,7 @@ Command to run .go file on windows terminal: go run {path-name}\\{file-name}.go
 Below are the list of things I have stumbled upon(so far...) and found useful.
 
 ### Resources:
-* **[Learn Go Programming](https://www.youtube.com/watch?v=YS4e4q9oBaU)** - Golang Tutorial for Beginners
+* **[Learn Go Programming](https://www.youtube.com/watch?v=YS4e4q9oBaU)** - Golang Tutorial for Beginners (freeCodeCamp.org - Youtube)
 * Go Track on **[Exercism](https://exercism.io/my/tracks/go)** - Coding Exercises
 * Go Courses by **[Jon Calhoun](https://courses.calhoun.io/courses)**
 - **[Download](https://golang.org/)** Golang
