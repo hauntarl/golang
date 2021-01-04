@@ -2,77 +2,34 @@ package main
 
 import "fmt"
 
+/*
+	Slices:
+		- []<datatype>{<values>}
+		- built-in function len(slice) to find the length
+		- built-in function cap(slice) actual length of underlying array
+		- value of an uninitialized slice is nil
+
+	Slice Copy:
+		- slice2 := slice1 (shallow copy)
+		- slice2 := slice1[:] (slice of all elements)
+		- slice2 := slice1[3:] (slice from 4th element to end)
+		- slice2 := slice1[:6] (slice of first 6 elements)
+		- slice2 := slice1[3:6] (slice of elements between 4 to 6)
+		- NOTE: <inclusive>:<exclusive>
+
+	Built-in functions:
+		1. slice := make([]<datatype>, <length>, <capacity>)
+			- Unlike array, slice doesn't have fixed size
+			- slices have the capability to add and remove elements from them
+			- make([]int, 50, 100) is equivalent to new([100]int)[0:50]
+		2. slice = append(<source>, <elements...>) - vargs
+			- if underlying array does not have the capacity to store the new element
+			- it creates a new array of larger size
+			- copies elements from previous array
+			- then appends the new element
+			- this operation can be very expensive
+*/
 func main() {
-	/*
-		Arrays:
-			- [<size>]<datatype>{<values>}
-			- [5]int{}: create an array of specified size
-			- [...]int{1, 2, 3, 4, 5}: create an array large enough to hold given data
-			- default value is zero for each element
-			- use built-in function len(array) to find the length
-			eg. [32]byte
-				[2*N] struct { x, y int32 }
-				[1000]*float64
-				[3][5]int
-				[2][2][2]float64  // same as [2]([2]([2]float64))
-
-		Array Copy:
-			- array2 := array1 (deep copy)
-			- Why? because pointers do exist
-			- array2 := &array1 (shallow copy)
-	*/
-	fmt.Println("\nARRAY DECLARATION:")
-	var grades [3]string = [3]string{"A", "B", "C"}
-	scores := [3]int{95}
-	marks := [...]int{85, 90}
-	fmt.Printf("Grades: %v\nScores: %v\nMarks: %v\n", grades, scores, marks)
-	fmt.Printf("Length of Marks array: %v\n", len(marks))
-
-	fmt.Println("\nIDENTITY MATRIX:")
-	var identityMatrix [3][3]int
-	identityMatrix[0] = [3]int{1, 0, 0}
-	identityMatrix[1] = [3]int{0, 1, 0}
-	identityMatrix[2] = [3]int{0, 0, 1}
-	fmt.Println(identityMatrix)
-
-	fmt.Println("\nARRAY COPY:")
-	a := [...]int{1, 2, 3}
-	b := a
-	b[1] = 4
-	fmt.Printf("Deep Copy: a-%v and b-%v\n", a, b)
-
-	c := &a
-	a[1] = 4
-	fmt.Printf("Shallow Copy: a-%v and c-%v\n", a, c)
-
-	/*
-		Slices:
-			- []<datatype>{<values>}
-			- built-in function len(slice) to find the length
-			- built-in function cap(slice) actual length of underlying array
-			- value of an uninitialized slice is nil
-
-		Slice Copy:
-			- slice2 := slice1 (shallow copy)
-			- slice2 := slice1[:] (slice of all elements)
-			- slice2 := slice1[3:] (slice from 4th element to end)
-			- slice2 := slice1[:6] (slice of first 6 elements)
-			- slice2 := slice1[3:6] (slice of elements between 4 to 6)
-			- NOTE: <inclusive>:<exclusive>
-
-		Built-in functions:
-			1. slice := make([]<datatype>, <length>, <capacity>)
-				- Unlike array slice doesn't have fixed size
-				- slices have the capability to add and remove elements from them
-				- make([]int, 50, 100) is equivalent to
-				- new([100]int)[0:50] statement
-			2. slice = append(<source>, <elements...>) - vargs
-				- if underlying array does not have the capacity to store the new element
-				- it creates a new array of larger size
-				- copies elements from previous array
-				- then appends the new element
-				- this operation can be very expensive
-	*/
 	fmt.Println("\nSLICES:")
 	d := []int{1, 2, 3, 4, 5}
 	e := d
@@ -127,7 +84,7 @@ func main() {
 	// how the underlying length and capacity changes
 	slice = make([]int, 5, 10)
 	cout(slice)
-	slice1 := slice // reamins same
+	slice1 := slice // remains same
 	cout(slice1)
 	slice2 := slice[:] // remains same
 	cout(slice2)
@@ -142,7 +99,7 @@ func main() {
 	// for slices, the upper index bound is the slice capacity cap(a) rather than the length
 	s1 := s[:cap(s)]
 	cout(s1)
-	
+
 	// full slice expression a[low:high:max]
 	s2 := arr[:2:3]
 	cout(s2)
