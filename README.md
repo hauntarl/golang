@@ -14,8 +14,10 @@ Below are the list of things I have stumbled upon(so far...) and found useful.
 * A **[Tour](https://tour.golang.org/welcome/1)** of Go
 * **[How to Write](https://golang.org/doc/code.html)** Go Code
 * Go **[Language specification](https://golang.org/ref/spec)**
-* Go **[Docs](https://golang.org/doc/)**
-* Go **[Packages](https://pkg.go.dev/)**
+* **[Effective Go](https://golang.org/doc/effective_go.html)**
+* The Go **[Memory Model](https://golang.org/ref/mem)**
+- Go **[Docs](https://golang.org/doc/)**
+- Go **[Packages](https://pkg.go.dev/)**
 
 
 ### Articles:
@@ -39,7 +41,11 @@ Below are the list of things I have stumbled upon(so far...) and found useful.
 * GopherCon 2016 - **[Understanding nil](https://www.youtube.com/watch?v=ynoY2xz-F8s)** by Francesc Campoy
 * GopherCon 2017 - **[Understanding Channels](https://www.youtube.com/watch?v=KBZlN0izeiY)** by Kavya Joshi
 * GopherCon 2018 - **[The Scheduler Saga](https://www.youtube.com/watch?v=YHRO5WQGh0k)** by Kavya Joshi
+* GopherCon 2015 - **[Simplicity and Go](https://www.youtube.com/watch?v=S6mEo_FHZ5Y&list=WL&index=3)** by Katherine Cox Buday
+* dotGo 2014 - **[Functional options for friendly APIs](https://www.youtube.com/watch?v=24lFtGHWxAQ&list=WL&index=2&t=0s)** by Dave Cheney
 - Google I/O 2012 - **[Go Concurrency Patterns](https://www.youtube.com/watch?v=f6kdp27TYZs)**
 - Google I/O 2013 - **[Advanced Go Concurrency Patterns](https://www.youtube.com/watch?v=QDDwwePbDtw)**
 * **[Concurrency Is Not Parallelism](https://www.youtube.com/watch?v=cN_DpYBzKso)** by Rob Pike
-* dotGo 2015 - **[Simplicity is Complicated](https://www.youtube.com/watch?v=rFejpH_tAHM)** by Rob Pike 
+* **[Simplicity is Complicated](https://www.youtube.com/watch?v=rFejpH_tAHM)** by Rob Pike
+* **["So You Wanna Go Fast?"](https://www.youtube.com/watch?v=DJ4d_PZ6Gns&list=WL&index=2&t=353s)** by Tyler Treat
+* **[Twelve Go Best Practices](https://www.youtube.com/watch?v=8D3Vmm1BGoY&list=WL&index=2&t=0s)** by Francesc Campoy
