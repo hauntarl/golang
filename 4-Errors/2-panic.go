@@ -5,19 +5,18 @@ import (
 	"net/http"
 )
 
+/*
+	Panic:
+		- when something unplanned happens in our go application
+		- their are two ways to go:
+			1. return an error value (normal case)
+			2. panic
+		- panics are used when your application gets into a state that it cannot recover from
+		  eg. divide by zero, cannot obtain TCP port for web server
+		- funtion will stop executing, but deferred function will still fire
+		- if nothing handles that panic then program will exit
+*/
 func main() {
-	/*
-		Panic:
-			- when something unplanned happens in our go application
-			- their are two ways to go:
-				1. return an error value (normal case)
-				2. panic
-			- panics are used when your application gets into a state that it cannot recover from
-			  eg. divide by zero, cannot obtain TCP port for web server
-			- funtion will stop executing, but deferred function will still fire
-			- if nothing handles that panic then program will exit
-	*/
-	
 	// a, b := 1, 0
 	// ans := a / b
 	// fmt.Println(ans)
