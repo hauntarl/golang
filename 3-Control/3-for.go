@@ -2,21 +2,21 @@ package main
 
 import "fmt"
 
-func main() {
-	/*
-		For Loops:
-			1. for <initializer>; <condition>; <incrementor> {}
-			2. for <condition> {}
-			3. for {}
-			4. for <key>, <value> := range <collection> {}
-				- arrays, slices, maps, strings and channels
-				- in case of channels, we only get one parameter: <value>
+/*
+	For Loops:
+		1. for <initializer>; <condition>; <incrementor> {}
+		2. for <condition> {}
+		3. for {}
+		4. for <key>, <value> := range <collection> {}
+			- arrays, slices, maps, strings and channels
+			- in case of channels, we only get one parameter: <value>
 
-		Exiting early?
-			1. break
-			2. continue
-			3. labels
-	*/
+	Exiting early?
+		1. break
+		2. continue
+		3. labels
+*/
+func main() {
 	fmt.Println("\nsimple for loop:")
 	for i := 0; i < 5; i++ {
 		fmt.Print(i, " ")
@@ -32,7 +32,7 @@ func main() {
 
 	fmt.Println("\nwhile loop in go")
 	i := 0
-	for i < 5 { // psych *****! go doesn't have one
+	for i < 5 { // psych! go doesn't have one
 		fmt.Print(i, " ")
 		i++
 	}
