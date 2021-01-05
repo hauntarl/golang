@@ -12,13 +12,13 @@ Below are the list of things I have stumbled upon(so far...) and found useful.
 * Go **[Docs](https://golang.org/doc/)**
 * Go **[Packages](https://pkg.go.dev/)**
 
-### Setup
+Setup
 
 * **[Download](https://golang.org/)** Golang
 * Setup **[VSCode](https://code.visualstudio.com/docs/languages/go)**
 * Go **[Playground](https://play.golang.org/)**
 
-### Getting Started
+Getting Started
 
 * A **[Tour](https://tour.golang.org/welcome/1)** of Go
 * **[How to Write](https://golang.org/doc/code.html)** Go Code
@@ -32,7 +32,7 @@ Below are the list of things I have stumbled upon(so far...) and found useful.
 * Using Go **[Modules](https://blog.golang.org/using-go-modules)**
 * Inside the Go **[Playground](https://blog.golang.org/playground)**
 
-### Official
+Official
 
 * **[Strings, bytes, runes and characters](https://blog.golang.org/strings)** in Go
 * **[Unicode Encodings](https://unicodebook.readthedocs.io/unicode_encodings.html)**
@@ -41,7 +41,7 @@ Below are the list of things I have stumbled upon(so far...) and found useful.
 * Go **[Maps](https://blog.golang.org/maps)** in action
 * **[Defer, Panic, and Recover](https://blog.golang.org/defer-panic-and-recover)**
 
-### Community
+Community
 
 * **[When nil Isn't Equal to nil](https://www.calhoun.io/when-nil-isnt-equal-to-nil/)** Jon Calhoun
 * **[50 Shades of Go:](http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/)** Traps, Gotchas, and Common Mistakes
