@@ -5,28 +5,6 @@ import (
 	"fmt"
 )
 
-func sayHello() {
-	fmt.Println("Hello World!")
-}
-
-func sayMessage(message string, index int) {
-	fmt.Println(message, index)
-}
-
-// arguments with same datatype can be comma separated, as it becomes less verbose
-func sayGreeting(greet, name string) {
-	fmt.Println(greet, name)
-}
-
-func sum(values ...int) {
-	fmt.Println(values)
-	result := 0
-	for _, value := range values {
-		result += value
-	}
-	fmt.Println("Sum is", result)
-}
-
 func main() {
 	/*
 		Basic Syntax:
@@ -48,7 +26,7 @@ func main() {
 	*/
 	fmt.Println("\nParameters:")
 	fmt.Println("\nBasic syntax:")
-	for i := 1; i <= 2; i++ {
+	for i := 1; i <= 5; i++ {
 		sayMessage("Hello", i)
 	}
 
@@ -79,6 +57,22 @@ func main() {
 		return
 	}
 	fmt.Println(result)
+}
+
+func sayHello() { fmt.Println("Hello World!") }
+
+func sayMessage(message string, index int) { fmt.Println(message, index) }
+
+// arguments with same datatype can be comma separated, as it becomes less verbose
+func sayGreeting(greet, name string) { fmt.Println(greet, name) }
+
+func sum(values ...int) {
+	fmt.Println(values)
+	result := 0
+	for _, value := range values {
+		result += value
+	}
+	fmt.Println("Sum is", result)
 }
 
 func whatAmI() *string {
