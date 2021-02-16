@@ -45,6 +45,7 @@ Community
 
 * **[Runes and character encoding](https://yourbasic.org/golang/rune/#:~:text=The%20rune%20type%20is%20an,and%20a%20few%20other%20characters.)**
 * **[UTF-8: Bits, Bytes, and Benefits](https://research.swtch.com/utf8)** Russ Coxx
+* The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About **[Unicode and Character Sets](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)** (No Excuses!)
 * **[When nil Isn't Equal to nil](https://www.calhoun.io/when-nil-isnt-equal-to-nil/)** Jon Calhoun
 * **[50 Shades of Go:](http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/)** Traps, Gotchas, and Common Mistakes
 * **[Functional options for friendly APIs](https://dave.cheney.net/2014/10/17/functional-options-for-friendly-apis)** Dave Cheney
