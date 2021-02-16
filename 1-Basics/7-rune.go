@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 /*
-	Runes - UTF32
+	Runes
 		- rn := '<single rune char>'
 		- type alias for int32
 		- special methods required to process
@@ -28,6 +28,10 @@ import "fmt"
 		'\0'         // illegal: too few octal digits
 		'\uDFFF'     // illegal: surrogate half
 		'\U00110000' // illegal: invalid Unicode code point
+
+	For more information, refer the following articles listed in readme:
+		Runes and character encoding
+		UTF-8: Bits, Bytes, and Benefits - Russ Coxx
 
 	Refer Go language specification for more info: https://golang.org/ref/spec
 */
