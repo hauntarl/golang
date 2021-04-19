@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package adb;
+
+import "google/protobuf/timestamp.proto";
+
+// specify where to put the generated file, the Go package name will be the 
+// last path component of the import path
+option go_package = "./adb";
+
+// define a Person message and provide its attributes
+message Person {
+    string name = 1;
+    int32 id = 2; // Unique ID number for this person
+    string email = 3;
+
+    enum PhoneType {
+        MOBILE = 0;
+        HOME = 1;
+        WORK = 2;
+    }
+
+    // embedded message definition, accessible only by the outer message
+    message PhoneNumber {
+        string number = 1;
+        PhoneType type = 2;
+    }
+
+    // the field may be repeated any number of times (including zero) (list)
+    repeated PhoneNumber phones = 4;
+    google.protobuf.Timestamp last_updated = 5;
+}
+
+// define AddressBook message with Person field repeated any number of times
+message AddressBook {
+    repeated Person people = 1;
+}
