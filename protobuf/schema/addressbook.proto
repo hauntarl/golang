@@ -20,7 +20,6 @@ message Person {
         WORK = 2;
     }
 
-    // embedded message definition, accessible only by the outer message
     message PhoneNumber {
         string number = 1;
         PhoneType type = 2;

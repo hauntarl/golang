@@ -8,6 +8,13 @@ This tutorial provides a basic Go programmer's introduction to working with prot
 
 Custom implementation of [Protocol Buffer Basics: Go](https://developers.google.com/protocol-buffers/docs/gotutorial) tutorial
 
+## More
+
+- [Language Guide](https://developers.google.com/protocol-buffers/docs/proto3) (proto3)
+- Go [Generated Code](https://developers.google.com/protocol-buffers/docs/reference/go-generated)
+- Go api doc [google.golang.org/protobuf/proto](https://pkg.go.dev/google.golang.org/protobuf/proto)
+- Go [FAQ](https://developers.google.com/protocol-buffers/docs/reference/go/faq)
+
 ## Description
 
 The example we're going to use is a very simple "address book" application that can read and write people's contact details to and from a file. Each person in the address book has a name, an ID, an email address, and a contact phone number.
@@ -25,7 +32,7 @@ Protocol buffers are the flexible, efficient, automated solution to solve exactl
 
 - *schema* contains .proto file which defines our messages
 - *adb* contains the generated .go file using defined schema
-- *cmd* contains .go file which utilizes the generated file from *adb*
+- *cmd* contains main.go file which utilizes file from *adb*
 
 **Run Commands:**
 
