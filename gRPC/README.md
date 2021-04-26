@@ -39,13 +39,11 @@ gRPC uses `protoc` with a special gRPC plugin to generate code from your proto f
 
 A simple client-server application with gRPC, which takes name of client as request and returns appropriate greetings as response.
 
-<!--
 ### Project Structure
 
-- *greeter* - contains `.proto` and generated files
-- *client* - contains implementation of client
-- *server* - contains implementation of server
--->
+- *[greeter](https://github.com/hauntarl/golang/tree/master/gRPC/greeter)* - contains `.proto` and generated files
+- *[client](https://github.com/hauntarl/golang/tree/master/gRPC/client)* - contains implementation of client
+- *[server](https://github.com/hauntarl/golang/tree/master/gRPC/server)* - contains implementation of server
 
 ### Run Commands
 
