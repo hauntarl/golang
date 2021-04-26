@@ -1,6 +1,6 @@
 # Introduction to Protocol Buffers
 
-This tutorial provides a basic Go programmer's introduction to working with protocol buffers, using the **[proto3](https://developers.google.com/protocol-buffers/docs/proto3)** version of the protocol buffers language. By walking through creating a simple example application, it shows you how to:
+This tutorial provides a basic Go programmer's introduction to working with **[protocol buffers](https://developers.google.com/protocol-buffers)**, using the **[proto3](https://developers.google.com/protocol-buffers/docs/proto3)** version of the protocol buffers language. By walking through creating a simple example application, it shows you how to:
 
 - Define message formats in a .proto file.
 - Use the protocol buffer compiler.
@@ -28,20 +28,20 @@ Protocol buffers are the flexible, efficient, automated solution to solve exactl
 
 Protocol buffers are the flexible, efficient, automated solution to solve exactly this problem. With protocol buffers, you write a `.proto` description of the data structure you wish to store. From that, the protocol buffer compiler creates a class that implements automatic encoding and parsing of the protocol buffer data with an efficient binary format. The generated class provides getters and setters for the fields that make up a protocol buffer and takes care of the details of reading and writing the protocol buffer as a unit. Importantly, the protocol buffer format supports the idea of extending the format over time in such a way that the code can still read data encoded with the old format.
 
-**Project Structure:**
+### Project Structure
 
 - *schema* contains .proto file which defines our messages
 - *adb* contains the generated .go file using defined schema
 - *cmd* contains main.go file which utilizes file from *adb*
 
-**Run Commands:**
+### Run Commands
 
 - [Compiling your protocol buffers](https://developers.google.com/protocol-buffers/docs/gotutorial#compiling-your-protocol-buffers)
 - go build -o addressbook.exe cmd/main.go
 - addressbook list (to display all entries made into address book)
 - addressbook add `[name of person]` (to create a new person entry in address book)
 
-**Output:**
+### Output
 
 ``` terminal
 D:\godemo\protobuf>protoc -I=schema --go_out=. schema/addressbook.proto
