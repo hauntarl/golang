@@ -6,7 +6,7 @@ This tutorial provides a basic Go programmer's introduction to working with **[p
 - Use the protocol buffer compiler.
 - Use the Go protocol buffer API to write and read messages.
 
-Custom implementation of **[Protocol Buffer Basics: Go](https://developers.google.com/protocol-buffers/docs/gotutorial)** tutorial
+>Custom implementation of **[Protocol Buffer Basics: Go](https://developers.google.com/protocol-buffers/docs/gotutorial)** tutorial
 
 ## More
 
