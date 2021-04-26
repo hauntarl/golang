@@ -37,27 +37,27 @@ Protocol buffers are the flexible, efficient, automated solution to solve exactl
 **Run Commands:**
 
 - [Compiling your protocol buffers](https://developers.google.com/protocol-buffers/docs/gotutorial#compiling-your-protocol-buffers)
-- go build cmd/main.go
-- main list (to display all entries made into address book)
-- main add `[name of person]` (to create a new person entry in address book)
+- go build -o addressbook.exe cmd/main.go
+- addressbook list (to display all entries made into address book)
+- addressbook add `[name of person]` (to create a new person entry in address book)
 
 **Output:**
 
 ``` terminal
 D:\godemo\protobuf>protoc -I=schema --go_out=. schema/addressbook.proto
 
-D:\godemo\protobuf>go build cmd/main.go
+D:\godemo\protobuf>go build -o addressbook.exe cmd/main.go
 
-D:\godemo\protobuf>main
+D:\godemo\protobuf>addressbook
 missing subcommand: list or add
 
-D:\godemo\protobuf>main unknown
+D:\godemo\protobuf>addressbook unknown
 unregistered subcommand: unknown
 
-D:\godemo\protobuf>main list
+D:\godemo\protobuf>addressbook list
 open address.pb: The system cannot find the file specified.
 
-D:\godemo\protobuf>main add Sameer Mungole
+D:\godemo\protobuf>addressbook add Sameer Mungole
 Enter email address (blank for none): sameer.mungole@gmail.com
 Enter a phone number (or leave blank to finish): 555-666-7777
 Is this a mobile, home, or work phone? home
@@ -65,20 +65,20 @@ Enter a phone number (or leave blank to finish): 111-222-3333
 Is this a mobile, home, or work phone? work
 Enter a phone number (or leave blank to finish):
 
-D:\godemo\protobuf>main list
+D:\godemo\protobuf>addressbook list
 Person ID: 0
   Name: Sameer Mungole
   E-mail address: sameer.mungole@gmail.com
   Home phone #: 555-666-7777
   Work phone #: 111-222-3333
 
-D:\godemo\protobuf>main add hauntarl
+D:\godemo\protobuf>addressbook add hauntarl
 Enter email address (blank for none):
 Enter a phone number (or leave blank to finish): 9876543210
 Is this a mobile, home, or work phone? default
 Enter a phone number (or leave blank to finish):
 
-D:\godemo\protobuf>main list
+D:\godemo\protobuf>addressbook list
 Person ID: 0
   Name: Sameer Mungole
   E-mail address: sameer.mungole@gmail.com
