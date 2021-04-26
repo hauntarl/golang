@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "./greeter";
+
+// The greeter service definition.
+message GreetRequest {
+    // The request message containing the user's name.
+    string name = 1;
+}
+
+message GreetResponse {
+    // The response message containing the greetings
+    string msg = 1;
+}
+
+// The greeting service definition.
+service Greeter {
+    // Sends a greeting
+    rpc Greet (GreetRequest) returns (GreetResponse);
+}

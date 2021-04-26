@@ -14,50 +14,68 @@ You define gRPC services in ordinary proto files, with RPC method parameters and
 
 ``` proto
 // The greeter service definition.
+message GreetRequest {
+    // The request message containing the user's name.
+    string name = 1;
+}
+
+message GreetResponse {
+    // The response message containing the greetings
+    string msg = 1;
+}
+
+// The greeting service definition.
 service Greeter {
-  // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply) {}
-}
-
-// The request message containing the user's name.
-message HelloRequest {
-  string name = 1;
-}
-
-// The response message containing the greetings
-message HelloReply {
-  string message = 1;
+    // Sends a greeting
+    rpc Greet (GreetRequest) returns (GreetResponse);
 }
 ```
 
 gRPC uses `protoc` with a special gRPC plugin to generate code from your proto file: you get generated gRPC client and server code, as well as the regular protocol buffer code for populating, serializing, and retrieving your message types.
 
->Custom implementation of **[Quick start](https://www.grpc.io/docs/languages/go/quickstart/)** guide for **gRPC in Go**.
-
-## More
-
-- gRPC [Documentation](https://www.grpc.io/docs/)
-- gRPC [Core concepts, architecture and lifecycle](https://www.grpc.io/docs/what-is-grpc/core-concepts/)
-- Go [Basics tutorial](https://grpc.io/docs/languages/go/basics/)
-- Go [Generated Code](https://www.grpc.io/docs/languages/go/generated-code/)
-- Go api doc [google.golang.org/grpc](https://pkg.go.dev/google.golang.org/grpc)
-- gRPC [Guides](https://grpc.io/docs/guides/)
-- gRPC [FAQs](https://www.grpc.io/docs/what-is-grpc/faq/)
-
-<!--
 ## Description
 
-Insert details about tutorial
+>Custom implementation of **[Quick start](https://www.grpc.io/docs/languages/go/quickstart/)** guide for **gRPC in Go**.
 
+A simple client-server application with gRPC, which takes name of client as request and returns appropriate greetings as response.
+
+<!--
 ### Project Structure
 
-- insert relevant information
+- *greeter* - contains `.proto` and generated files
+- *client* - contains implementation of client
+- *server* - contains implementation of server
+-->
 
 ### Run Commands
 
-- go run duh...
+- go run server/main.go
+- go build -o greet.exe client/main.go
+- greet `<name>[optional]...`
 
 ### Output
 
 ``` terminal
+D:\golang\gRPC>go run server/main.go
+
+D:\golang\gRPC>go build -o greet.exe client/main.go
+
+D:\golang\gRPC>greet
+Hello World
+
+D:\golang\gRPC>greet hauntarl
+Hello hauntarl
+
+D:\golang\gRPC>greet Sameer Mungole
+Hello Sameer Mungole
 ```
+
+## What's Next?
+
+- [Basics tutorial](https://grpc.io/docs/languages/go/basics/) in Go
+- Go [Generated Code](https://www.grpc.io/docs/languages/go/generated-code/)
+- Go api doc [google.golang.org/grpc](https://pkg.go.dev/google.golang.org/grpc)
+- gRPC [Documentation](https://www.grpc.io/docs/)
+- [Core concepts, architecture and lifecycle](https://www.grpc.io/docs/what-is-grpc/core-concepts/)
+- gRPC [Guides](https://grpc.io/docs/guides/)
+- gRPC [FAQs](https://www.grpc.io/docs/what-is-grpc/faq/)
