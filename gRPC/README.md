@@ -10,7 +10,15 @@ gRPC clients and servers can run and talk to each other in a variety of environm
 
 By default, gRPC uses **[Protocol Buffers](https://developers.google.com/protocol-buffers/docs/overview)**, Google’s mature open source mechanism for serializing structured data (although it can be used with other data formats such as JSON). Not familiar with protocol buffers? Refer *[protobuf](https://github.com/hauntarl/golang/tree/master/protobuf)* to get started.
 
-You define gRPC services in ordinary proto files, with RPC method parameters and return types specified as protocol buffer messages:
+gRPC uses `protoc` with a special gRPC plugin to generate code from your proto file: you get generated gRPC client and server code, as well as the regular protocol buffer code for populating, serializing, and retrieving your message types.
+
+## Description
+
+>Custom implementation of **[Quick start](https://www.grpc.io/docs/languages/go/quickstart/)** guide for **gRPC in Go**.
+
+A simple client-server application with gRPC, which takes name of client as request and returns appropriate greetings as response.
+
+Define gRPC services in ordinary proto files, with RPC method parameters and return types specified as protocol buffer messages:
 
 ``` proto
 message GreetRequest {
@@ -29,14 +37,6 @@ service Greeter {
     rpc Greet (GreetRequest) returns (GreetResponse);
 }
 ```
-
-gRPC uses `protoc` with a special gRPC plugin to generate code from your proto file: you get generated gRPC client and server code, as well as the regular protocol buffer code for populating, serializing, and retrieving your message types.
-
-## Description
-
->Custom implementation of **[Quick start](https://www.grpc.io/docs/languages/go/quickstart/)** guide for **gRPC in Go**.
-
-A simple client-server application with gRPC, which takes name of client as request and returns appropriate greetings as response.
 
 ### Project Structure
 
