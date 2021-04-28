@@ -13,7 +13,6 @@ By default, gRPC uses **[Protocol Buffers](https://developers.google.com/protoco
 You define gRPC services in ordinary proto files, with RPC method parameters and return types specified as protocol buffer messages:
 
 ``` proto
-// The greeter service definition.
 message GreetRequest {
     // The request message containing the user's name.
     string name = 1;
